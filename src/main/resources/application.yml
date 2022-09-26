@@ -1,0 +1,19 @@
+server:
+  server.port: 9090
+  error:
+    include-message: always
+    include-binding-error: always
+spring:
+  datasource:
+    password:
+      url: jdbc:postgresql://localhost:5432/registration
+      username:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    jpa:
+      hibernate:
+        ddl-auto: create-drop
+        properties:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+          show_sql: true
